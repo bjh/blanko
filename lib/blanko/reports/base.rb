@@ -1,10 +1,10 @@
 module Blanko
   module Reports
     class Base
-      attr_reader :orders, :emitter, :data, :header
+      attr_reader :records, :emitter, :data, :header
 
-      def initialize(orders, emitter)
-        @orders = orders
+      def initialize(records, emitter)
+        @records = records
         @emitter = emitter
         @data = []
         @header = nil
@@ -15,7 +15,7 @@ module Blanko
       end
 
       def iterate(&block)
-        @orders.each do |order|
+        @records.each do |order|
           block.call(order)
         end
       end
