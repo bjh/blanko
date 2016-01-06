@@ -12,7 +12,7 @@ module Blanko
 
         @report.data.each do |row|
           columns.each do |column|
-            value = Money.from_string(row[column].to_s.gsub(/\$/, ''))
+            value = Money.from_string(row[column])
             totals[column] ||= Money.from_string('0')
             totals[column] += value
           end
