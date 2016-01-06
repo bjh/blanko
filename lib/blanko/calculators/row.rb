@@ -12,7 +12,7 @@ module Blanko
           total = Money.from_string('0')
 
           input_colums.each do |column|
-            total += Money.from_string(row[column])
+            total += Money.from_string(row[column].to_s.gsub(/\$/, ''))
           end
 
           row[output_column] = total
