@@ -8,7 +8,7 @@ module Blanko
       end
 
       def calculate(input_colums, output_column)
-        @report.data.each do |row|
+        report.data.each do |row|
           total = Money.from_string('0')
 
           input_colums.each do |column|

@@ -10,7 +10,7 @@ module Blanko
       def calculate(columns)
         totals = []
 
-        @report.data.each do |row|
+        report.data.each do |row|
           columns.each do |column|
             value = Money.from_string(row[column])
             totals[column] ||= Money.from_string('0')
